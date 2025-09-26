@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Open New Tab</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <h1>Click the Button to Open a New Tab</h1>
+  <button id="openTabBtn" onclick="openNewTab()">Open Tab</button>
+
+  <script>
+    window.addEventListener('load', () => {
+      const params = new URLSearchParams(window.location.search);
+      const chatid = params.get('chatid');
+      const cifId = params.get('cifId');
+      const urlToOpen = 'https://developer.kore.ai/';
+     const newTab = window.open(`https://developer.kore.ai?chatid=${chatid}&cifId=${cifId}`, '_blank');
+      if (newTab) {
+        document.getElementById('openTabBtn').style.display = 'none'; // Hide button
+      }
+    });
+    
+
+  </script>
+  <script>
+  document.getElementById('openTabBtn').addEventListener('click', () => {
+    const params = new URLSearchParams(window.location.search);
+    const conversationId = params.get('chatid');
+     const chatid = params.get('chatid');
+      const cifId = params.get('cifId');
+      const urlToOpen = 'https://developer.kore.ai/';
+     const newTab = window.open(`https://developer.kore.ai?chatid=${chatid}&cifId=${cifId}`, '_blank');
+     
+  });
+</script>
+
+</body>
+
+
+</html>
+
+
