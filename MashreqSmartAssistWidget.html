@@ -28,7 +28,8 @@
     window.addEventListener('load', () => {
       const params = new URLSearchParams(window.location.search);
       const chatid = params.get('chatid');
-      const cifId = params.get('cifId');
+      let cifId = params.get('cifId');
+      cifId =  Buffer.from(cifId.toString()).toString('base64');
       const urlToOpen = 'https://developer.kore.ai/';
      const newTab = window.open(`https://developer.kore.ai?chatid=${chatid}&cifId=${cifId}`, '_blank');
       if (newTab) {
@@ -43,7 +44,8 @@
     const params = new URLSearchParams(window.location.search);
     const conversationId = params.get('chatid');
      const chatid = params.get('chatid');
-      const cifId = params.get('cifId');
+      let cifId = params.get('cifId');
+       cifId =  Buffer.from(cifId.toString()).toString('base64');
       const urlToOpen = 'https://developer.kore.ai/';
      const newTab = window.open(`https://developer.kore.ai?chatid=${chatid}&cifId=${cifId}`, '_blank');
      
@@ -54,5 +56,6 @@
 
 
 </html>
+
 
 
